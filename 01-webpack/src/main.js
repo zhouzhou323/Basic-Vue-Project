@@ -28,4 +28,4 @@ new Vue({
     }
 })
 
-document.writeln('<p>run success</p>')
+document.writeln('<p>I still don not know how to use git</p>')
