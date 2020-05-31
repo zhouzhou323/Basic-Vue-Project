@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 没有参数
+        const ccc = () => {
+
+        }
+        // 有两个参数
+        const sum = (num1, num2) => {
+            return num1 + num2
+        }
+        // 只有一个参数
+        const power = num => {
+            return num * num
+        }
+        // 函数代码块中只有一行代码
+        const mul = (num1, num2) => num1 * num2
+        const demo = () => console.log("hello,demo")
+
+        // 什么时候使用箭头函数：当把函数作为另一个函数的参数传入时
+        const obj = {
+            aaa() {
+                setTimeout(function(){
+                    console.log(this);//window
+                })
+
+                setTimeout(()=>{
+                    console.log(this)//obj
+                })
+                // 结论：箭头函数中的this是向外层作用域中逐层查找，直到有this的定义
+            }
+        }
+
+        obj.aaa()
+    </script>
+    
+</body>
+</html>
