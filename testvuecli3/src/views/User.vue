@@ -14,7 +14,13 @@ export default {
         //    拿到活跃的router 
            return this.$route.params.userId 
         }
-    }
+    },
+  created(){
+    console.log('user created');
+  },
+  destroyed(){
+    console.log('user destroyed')
+  },
 }
 </script>
 

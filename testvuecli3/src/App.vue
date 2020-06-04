@@ -9,13 +9,17 @@
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
       <router-link :to="'/user/'+userId">User</router-link>
-      <router-link :to="{path:'profile', query:{name:'zhouzhou',age:'23'}}">Profile</router-link>
+      <router-link :to="{path:'/profile', query:{name:'zhouzhou',age:'23'}}">Profile</router-link>
       <!-- <router-link to="/profile">Profile</router-link> -->
 
       <button @click='btnProfile'>profile</button>
       <button @click='btnUser'>user</button>
     </div>
-    <router-view/>
+
+    <keep-alive exclude="Profile,User">
+       <router-view/>
+    </keep-alive>
+   
   </div>
 </template>
 

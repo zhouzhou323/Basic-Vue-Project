@@ -30,10 +30,10 @@ Vue.use(VueRouter)
       title: '首页'
     },
     children:[
-      {
-        path:'',
-        redirect:'news'
-      },
+      // {
+      //   path:'',
+      //   redirect:'news'
+      // },
       {
         path:'news',
         component:HomeNews
@@ -54,7 +54,11 @@ Vue.use(VueRouter)
     component: About,
     meta:{
       title: '关于'
-    }
+    },
+    // beforeEnter: (to, from, next) => {
+    //   console.log('about beforeEnter');
+    //   next()
+    // }
   },
   {
     path:'/user/:userId',
@@ -84,6 +88,10 @@ router.beforeEach((to, from, next)=> {
   document.title = to.matched[0].meta.title
   next()
 })
+
+// router.afterEach((to, from) => {
+//   console.log('xxx')
+// })
 
 // 3.将router对象传入到vue实例
 export default router

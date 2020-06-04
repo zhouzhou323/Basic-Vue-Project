@@ -17,6 +17,26 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+      path:'/home/news'
+    }
+  },
+  created(){
+    console.log('home created');
+  },
+  destroyed(){
+    console.log('home destroyed')
+  },
+  activated(){
+    // console.log('home activated')
+    this.$router.push(this.path)
+  },
+  beforeRouteLeave(to, from, next){
+    console.log(this.$route.path);
+    this.path = this.$route.path;
+    next()
   }
 }
 </script>
